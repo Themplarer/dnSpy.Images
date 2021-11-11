@@ -1,18 +1,33 @@
-﻿<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Width="16" Height="16">
-	<Rectangle Width="16" Height="16">
-		<Shape.Fill>
-			<DrawingBrush>
-				<DrawingBrush.Drawing>
-					<DrawingGroup>
-						<DrawingGroup.Children>
-							<GeometryDrawing Brush="#FFF6F6F6" Geometry="F1 M7.5861,0.000700000000000145 L9.99999999997669E-05,7.5867 L9.99999999997669E-05,8.4147 L7.5861,15.9997 L8.4141,15.9997 L16.0001,8.4147 L16.0001,7.5867 L8.4141,0.000700000000000145" />
-							<GeometryDrawing Brush="#FFE51300" Geometry="F1 M9,9 L9,11 L7,11 L7,9 L5,9 L5,7 L7,7 L7,5 L9,5 L9,7 L11,7 L11,9 M8,1 L1,8 L8,15 L15,8" />
-							<GeometryDrawing Brush="#00FFFFFF" Geometry="F1 M16,16 L0,16 L0,0 L16,0" />
-							<GeometryDrawing Brush="#FFFFFFFF" Geometry="F1 M11,7.0005 L9,7.0005 L9,5.0005 L7,5.0005 L7,7.0005 L5,7.0005 L5,9.0005 L7,9.0005 L7,11.0005 L9,11.0005 L9,9.0005 L11,9.0005" />
-						</DrawingGroup.Children>
-					</DrawingGroup>
-				</DrawingBrush.Drawing>
-			</DrawingBrush>
-		</Shape.Fill>
-	</Rectangle>
+<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:System="clr-namespace:System;assembly=mscorlib"
+         Width="16 " Height="16">
+  <Rectangle Width="16 " Height="16">
+    <FrameworkElement.Resources>
+      <SolidColorBrush x:Key="canvas" Opacity="0"/>
+      <SolidColorBrush x:Key="light-red" Color="#c50b17" Opacity="1"/>
+      <SolidColorBrush x:Key="white" Color="#ffffff" Opacity="1"/>
+      <System:Double x:Key="cls-1">0.75</System:Double>
+    </FrameworkElement.Resources>
+    <Shape.Fill>
+      <DrawingBrush Stretch="None">
+        <DrawingBrush.Drawing>
+          <DrawingGroup>
+            <DrawingGroup x:Name="canvas">
+              <GeometryDrawing Brush="{DynamicResource canvas}" Geometry="F1 M 16,16 L 0,16 0,0 16,0 Z"/>
+            </DrawingGroup>
+            <DrawingGroup x:Name="level_1">
+              <DrawingGroup Opacity="{DynamicResource cls-1}">
+                <GeometryDrawing Brush="{DynamicResource light-red}" Geometry="F1 M 8,15.071 L 0.929,8 8,0.929 15.071,8 Z"/>
+              </DrawingGroup>
+              <GeometryDrawing Brush="{DynamicResource light-red}"
+                               Geometry="F1 M 8.354,15.425 L 7.646,15.425 0.575,8.354 0.575,7.646 7.646,0.575 8.354,0.575 15.425,7.646 15.425,8.354 M 1.636,8 L 8,14.364 14.364,8 8,1.636 Z"/>
+              <GeometryDrawing Brush="{DynamicResource white}"
+                               Geometry="F1 M 11,9 L 9,9 9,11 7,11 7,9 5,9 5,7 7,7 7,5 9,5 9,7 11,7 Z"/>
+            </DrawingGroup>
+          </DrawingGroup>
+        </DrawingBrush.Drawing>
+      </DrawingBrush>
+    </Shape.Fill>
+  </Rectangle>
 </Viewbox>

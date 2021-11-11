@@ -1,16 +1,28 @@
-﻿<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Width="16" Height="16">
-  <Rectangle Width="16" Height="16">
+<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:System="clr-namespace:System;assembly=mscorlib"
+         Width="16 " Height="16">
+  <Rectangle Width="16 " Height="16">
+    <FrameworkElement.Resources>
+      <SolidColorBrush x:Key="canvas" Opacity="0"/>
+      <SolidColorBrush x:Key="light-yellow-10" Color="#996f00" Opacity="0.1"/>
+      <SolidColorBrush x:Key="light-yellow" Color="#996f00" Opacity="1"/>
+    </FrameworkElement.Resources>
     <Shape.Fill>
-      <DrawingBrush>
+      <DrawingBrush Stretch="None">
         <DrawingBrush.Drawing>
           <DrawingGroup>
-            <DrawingGroup.Children>
-              <GeometryDrawing Brush="#00FFFFFF" Geometry="F1 M16,16 L0,16 L0,0 L16,0" />
-              <GeometryDrawing Brush="#FFF6F6F6" Geometry="F1 M2.9997,-0.000199999999999534 L2.9997,0.8778 L2.3787,0.2568 L0.2577,2.3788 L0.8787,3.0008 L-0.000300000000000189,3.0008 L-0.000300000000000189,5.9998 L0.8787,5.9998 L0.2567,6.6208 L5.5177,11.9478 L7.0177,10.4478 L7.0177,14.0348 L9.6037,14.0348 L11.5687,15.9998 L12.4647,15.9998 L15.9317,12.5338 L13.4317,10.0338 L14.9317,8.5348 L12.0177,5.6198 L10.6037,7.0338 L10.4317,7.0338 L8.9997,5.6018 L8.9997,3.0008 L8.1207,3.0008 L8.7427,2.3788 L6.6217,0.2568 L6.0007,0.8778 L6.0007,-0.000199999999999534" />
-              <GeometryDrawing Brush="#FF414141" Geometry="F1 M13.0176,11.0176 L12.0176,11.9996 L8.9996,11.9996 L8.9996,8.9996 L10.0176,8.9996 L9.5176,9.5176 L11.0176,11.0256 L13.5176,8.5296 L12.0176,7.0156 L11.0176,7.9996 L9.0176,7.9996 L8.0176,7.9996 L9.0176,7.0176 L7.0176,5.0256 L3.5176,8.5296 L5.5176,10.5146 L7.0176,8.9996 L7.9996,8.9996 L7.9996,12.9996 L11.0176,12.9996 L10.5176,13.5176 L12.0176,15.0256 L14.5176,12.5216" />
-              <GeometryDrawing Brush="#FFC27C19" Geometry="F1 M7.3971,4.0003 L8.0001,4.6023 L8.0001,4.0003" />
-              <GeometryDrawing Brush="#FFC27C19" Geometry="F1 M4,4 L5,4 L5,5 L4,5 M2.379,7.328 L4,5.707 L4,6.638 L6.638,4 L5.707,4 L7.328,2.379 L6.621,1.671 L5,3.292 L5,1 L4,1 L4,3.292 L2.379,1.671 L1.671,2.379 L3.292,4 L1,4 L1,5 L3.292,5 L1.671,6.621" />
-            </DrawingGroup.Children>
+            <DrawingGroup x:Name="canvas">
+              <GeometryDrawing Brush="{DynamicResource canvas}" Geometry="F1 M 16,16 L 0,16 0,0 16,0 Z"/>
+            </DrawingGroup>
+            <DrawingGroup x:Name="level_1">
+              <GeometryDrawing Brush="{DynamicResource light-yellow-10}"
+                               Geometry="F1 M 13,10 L 11.5,8.5 13.5,6.5 15,8 M 11.5,13.5 L 13,15 15,13 13.5,11.5 M 3.954,7.954 L 5.5,9.5 9.5,5.5 7.954,3.954 A 4.477,4.477 0 0 1 3.954,7.954 Z"/>
+              <GeometryDrawing Brush="{DynamicResource light-yellow}"
+                               Geometry="F1 M 11.146,8.854 L 12.646,10.354 13.354,10.354 15.354,8.354 15.354,7.646 13.854,6.146 13.146,6.146 12.293,7 8.707,7 9.854,5.854 9.854,5.146 7.977,3.27 C 7.977,3.348 8,3.421 8,3.5 A 4.469,4.469 0 0 1 7.859,4.566 L 8.793,5.5 5.5,8.793 4.566,7.859 A 4.469,4.469 0 0 1 3.5,8 C 3.421,8 3.348,7.981 3.27,7.977 L 5.146,9.854 5.854,9.854 7.707,8 9,8 9,12.5 9.5,13 11.293,13 11.146,13.146 11.146,13.854 12.646,15.354 13.354,15.354 15.354,13.354 15.354,12.646 13.854,11.146 13.146,11.146 12.293,12 10,12 10,8 11.293,8 11.146,8.146 M 13.5,12.207 L 14.293,13 13,14.293 12.207,13.5 M 13.5,7.207 L 14.293,8 13,9.293 12.207,8.5 Z"/>
+              <GeometryDrawing Brush="{DynamicResource light-yellow}"
+                               Geometry="F1 M 3,2 L 3,0 4,0 4,2 3.5,2.5 M 3.5,4.5 L 3,5 3,7 4,7 4,5 M 4.5,3.5 L 5,4 7,4 7,3 5,3 M 2.5,3.5 L 2,3 0,3 0,4 2,4 M 4.208,2.8 L 4.916,2.8 6.328,1.378 5.62,0.671 4.208,2.088 M 2.792,4.206 L 2.085,4.206 0.673,5.623 1.38,6.329 2.793,4.913 M 4.206,4.206 L 4.206,4.914 5.623,6.328 6.329,5.62 4.913,4.208 M 2.794,2.792 L 2.794,2.085 1.378,0.673 0.671,1.38 2.088,2.793 Z"/>
+            </DrawingGroup>
           </DrawingGroup>
         </DrawingBrush.Drawing>
       </DrawingBrush>

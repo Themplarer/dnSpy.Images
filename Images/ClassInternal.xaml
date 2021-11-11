@@ -1,14 +1,32 @@
-﻿<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" Width="16" Height="16">
-  <Rectangle Width="16" Height="16">
+<Viewbox xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         xmlns:System="clr-namespace:System;assembly=mscorlib"
+         Width="16 " Height="16">
+  <Rectangle Width="16 " Height="16">
+    <FrameworkElement.Resources>
+      <SolidColorBrush x:Key="canvas" Opacity="0"/>
+      <SolidColorBrush x:Key="light-yellow-10" Color="#996f00" Opacity="0.1"/>
+      <SolidColorBrush x:Key="light-yellow" Color="#996f00" Opacity="1"/>
+      <SolidColorBrush x:Key="light-defaultgrey-10" Color="#212121" Opacity="0.1"/>
+      <SolidColorBrush x:Key="light-defaultgrey" Color="#212121" Opacity="1"/>
+    </FrameworkElement.Resources>
     <Shape.Fill>
-      <DrawingBrush>
+      <DrawingBrush Stretch="None">
         <DrawingBrush.Drawing>
           <DrawingGroup>
-            <DrawingGroup.Children>
-              <GeometryDrawing Brush="#FFF6F6F6" Geometry="F1 M2.5,7.9141 L4,6.4141 L4,10.0001 L6.586,10.0001 L9,12.4141 L9.126,12.2881 C9.221,12.5941 9.363,12.8851 9.56,13.1391 C9.853,13.4921 11.807,15.6681 11.807,15.6681 L12.104,16.0001 L13.013,16.0001 L13.313,15.6471 C13.313,15.6471 15.148,13.4891 15.46,13.1131 C15.803,12.6711 16,12.0761 16,11.4821 C16,10.1371 14.888,9.0001 13.571,9.0001 C13.133,9.0001 12.781,9.1711 12.5,9.4161 C12.41,9.3371 12.31,9.2701 12.204,9.2101 L12.914,8.5001 L10.414,6.0001 L11.914,4.5001 L9,1.5861 L7.586,3.0001 L7.414,3.0001 L4.414,9.99999999997669E-05 L3.586,9.99999999997669E-05 L0,3.5861 L0,5.4141" />
-              <GeometryDrawing Brush="#FFC27C19" Geometry="F1 M10,7 L9,8 L6,8 L6,5 L7,5 L6.5,5.5 L8,7 L10.5,4.5 L9,3 L8,4 L6,4 L5,4 L6,3 L4,1 L0.5,4.5 L2.5,6.5 L4,5 L5,5 L5,9 L8,9 L7.5,9.5 L9,11 L11.5,8.5" />
-              <GeometryDrawing Brush="#FF414141" Geometry="F1 M13.5713,10 C13.0443,10 12.7113,10.747 12.5003,11.25 C12.2893,10.747 11.9553,10 11.4283,10 C10.7013,10 10.0003,10.664 10.0003,11.482 C10.0003,11.857 10.1273,12.238 10.3293,12.5 C10.6193,12.85 12.5503,15 12.5503,15 C12.5503,15 14.3803,12.85 14.6703,12.5 C14.8733,12.238 15.0003,11.857 15.0003,11.482 C15.0003,10.664 14.3003,10 13.5713,10" />
-            </DrawingGroup.Children>
+            <DrawingGroup x:Name="canvas">
+              <GeometryDrawing Brush="{DynamicResource canvas}" Geometry="F1 M 16,16 L 0,16 0,0 16,0 Z"/>
+            </DrawingGroup>
+            <DrawingGroup x:Name="level_1">
+              <GeometryDrawing Brush="{DynamicResource light-yellow-10}"
+                               Geometry="F1 M 5.5,1.5 L 7.5,3.5 3.5,7.5 1.5,5.5 M 11.5,4.5 L 9.5,6.5 11,8 13,6 Z"/>
+              <GeometryDrawing Brush="{DynamicResource light-yellow}"
+                               Geometry="F1 M 7,10.5 L 7.124,10.624 A 3.5,3.5 0 0 1 8,9.058 L 8,6 9.293,6 9.146,6.146 9.146,6.854 10.312,8.019 C 10.375,8.019 10.436,8 10.5,8 10.524,8 10.547,8.008 10.57,8.008 10.593,8.008 10.623,8 10.65,8 A 3.4,3.4 0 0 1 11.567,8.14 L 13.354,6.354 13.354,5.646 11.854,4.146 11.146,4.146 10.293,5 6.707,5 7.854,3.854 7.854,3.146 5.854,1.146 5.146,1.146 1.146,5.146 1.146,5.854 3.146,7.854 3.854,7.854 5.707,6 7,6 M 11.5,5.207 L 12.293,6 11,7.293 10.207,6.5 M 3.5,6.793 L 2.207,5.5 5.5,2.207 6.793,3.5 Z"/>
+              <GeometryDrawing Brush="{DynamicResource light-defaultgrey-10}"
+                               Geometry="F1 M 15.5,11.5 A 1.99,1.99 0 0 1 15.352,12.25 L 15.214,12.515 C 15.014,12.846 12,15.325 12,15.325 12,15.325 8.982,12.846 8.786,12.515 L 8.648,12.25 A 1.993,1.993 0 0 1 12,10.19 1.992,1.992 0 0 1 15.5,11.5 Z"/>
+              <GeometryDrawing Brush="{DynamicResource light-defaultgrey}"
+                               Geometry="F1 M 13.5,9 A 2.478,2.478 0 0 0 12,9.509 2.491,2.491 0 0 0 8,11.5 2.517,2.517 0 0 0 8.2,12.478 L 8.352,12.772 A 33.618,33.618 0 0 0 11.679,15.712 L 11.996,15.973 12.313,15.712 A 31.686,31.686 0 0 0 15.655,12.744 L 15.811,12.437 A 2.494,2.494 0 0 0 13.5,9 M 14.9,12.047 L 14.8,12.239 C 14.633,12.457 13.3,13.603 12,14.677 10.7,13.603 9.37,12.46 9.229,12.287 L 9.112,12.062 A 1.493,1.493 0 0 1 11.624,10.519 L 12,10.949 12.376,10.519 A 1.494,1.494 0 0 1 14.9,12.047 Z"/>
+            </DrawingGroup>
           </DrawingGroup>
         </DrawingBrush.Drawing>
       </DrawingBrush>
