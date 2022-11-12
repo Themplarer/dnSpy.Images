@@ -1,15 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <Import Project="..\..\DnSpyCommon.props" />
+    <Import Project="..\..\DnSpyCommon.props"/>
 
-  <PropertyGroup>
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>..\..\dnSpy.snk</AssemblyOriginatorKeyFile>
-    <UseWPF>true</UseWPF>
-  </PropertyGroup>
+    <PropertyGroup>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <Resource Include="Images\*.16.16.png" />
-  </ItemGroup>
+    <ItemGroup>
+        <Resource Include="Images\*.16.16.png"/>
+    </ItemGroup>
 
 </Project>
